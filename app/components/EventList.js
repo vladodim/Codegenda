@@ -1,14 +1,14 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { ScrollView, View, Text } from 'react-native';
 import EventListItem from './EventListItem';
 
 export default class EventList extends React.Component {
   render()
   {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        { this._renderEvents() }
-      </View>
+        <ScrollView contentContainerStyle={{flexGrow:1, paddingVertical: 20, paddingHorizontal: 15}}>
+          { this._renderEvents() }
+        </ScrollView>
     );
   }
 
@@ -18,7 +18,7 @@ export default class EventList extends React.Component {
       console.log(this.props.events.lenght);
 
       return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <View style={{flex: 1}}>
           {
             this.props.events.map( (event, i) => {
               return(

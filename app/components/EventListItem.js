@@ -8,11 +8,13 @@ export default class EventListItem extends React.Component {
 
     return (
       <View style={{flex:1, alignItems: 'flex-end', justifyContent: 'center'}}>
-        <View style={{ flex: 2, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-          <Text style={{flex:1}}>{event.time}</Text>
-          <Text style={{flex:3, flexWrap:'wrap', fontSize: 20}}>{event.Title}</Text>
+        <View style={{ flex: 2, flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between' }}>
+          <Text style={{flex:1, textAlign:'right'}}>{event.time}</Text>
+          <Text style={{flex:5, flexWrap:'wrap', textAlign:'right', fontSize: 20}}>{event.Title}</Text>
         </View>
+        <View style={{height:20}} />
         <Text style={{flex:1}}>{event.Speaker}</Text>
+        <View style={{height:60}} />
       </View>
     );
   }
