@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import EventListItem from './EventListItem';
 
 export default class EventList extends React.Component {
   render()
@@ -21,7 +22,7 @@ export default class EventList extends React.Component {
           {
             this.props.events.map( (event, i) => {
               return(
-                <Text key={i}>{event.Title}</Text>
+                <EventListItem key={i} event={event} />
               )
             })
           }
