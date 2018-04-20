@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, View, Text } from 'react-native';
+import { ScrollView, View, Text, TouchableHighlight } from 'react-native';
 import EventListItem from './EventListItem';
 
 export default class EventList extends React.Component {
@@ -22,7 +22,9 @@ export default class EventList extends React.Component {
           {
             this.props.events.map( (event, i) => {
               return(
-                <EventListItem key={i} event={event} />
+                <TouchableHighlight key={i} onPress={ () => {this._onPressHandle(i)} } underlayColor='gray'>
+                  <EventListItem event={event} />
+                </TouchableHighlight>
               )
             })
           }
@@ -41,5 +43,15 @@ export default class EventList extends React.Component {
         </View>
       );
     }
+  }
+
+  _onPressHandle = (index) => {
+    let {onPress} = this.props
+    if (onPress)
+    {
+      onPress(index)
+    }
+
+    console.log("pressed " + index)
   }
 }

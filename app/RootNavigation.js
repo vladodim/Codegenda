@@ -1,15 +1,13 @@
 import React from 'react';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 
-import AgendaScreen from './screens/AgendaScreen';
 import PlaceholderScreen from './screens/PlaceholderScreen';
-import { agenda } from './resources/agenda';
+import StackedAgenda from './StackedAgenda';
 
-console.log(agenda);
 
 export default TabNavigator({
   Agenda: {
-    screen: props => <AgendaScreen events={agenda}/>,
+    screen: StackedAgenda,
     navigationOptions: {
       tabBarLabel: 'Agenda'
     }

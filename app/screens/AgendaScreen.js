@@ -6,8 +6,13 @@ export default class AgendaScreen extends React.Component {
   render() {
     return (
       <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
-        <EventView {...this.props} />
+        <EventView {...this.props} onPress = { this._onPress } />
       </SafeAreaView>
     );
+  }
+
+  _onPress = () =>
+  {
+    this.props.navigation.navigate("Detail")
   }
 }
