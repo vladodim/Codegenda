@@ -5,7 +5,7 @@ import EventList from './EventList';
 export default class EventView extends React.Component {
   render() {
     return (
-      <EventList />
+      <EventList {...this.props}/>
     );
   }
 }
