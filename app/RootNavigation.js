@@ -3,10 +3,13 @@ import { TabNavigator, StackNavigator } from 'react-navigation';
 
 import AgendaScreen from './screens/AgendaScreen';
 import PlaceholderScreen from './screens/PlaceholderScreen';
+import { agenda } from './resources/agenda';
+
+console.log(agenda);
 
 export default TabNavigator({
   Agenda: {
-    screen: AgendaScreen,
+    screen: props => <AgendaScreen events={agenda}/>,
     navigationOptions: {
       tabBarLabel: 'Agenda'
     }
